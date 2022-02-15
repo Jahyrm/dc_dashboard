@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html class="loading" lang="es" data-textdirection="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimal-ui">
+  <meta name="description" content="Dashboard que presenta los resultados del proyecto final de la materia de ciencia de datos de la Universidad de Cuenca.">
+  <meta name="keywords" content="dashboard, data science, universidad de cuenca">
+  <meta name="author" content="Jahyr Moreno">
+  <title>Proyecto Final de Data Science</title>
+  <link rel="icon" type="image/png" href="./images/favicon/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="./images/favicon/favicon-16x16.png" sizes="16x16" />
+  <link href="./assets/css/css2.css" rel="stylesheet">
+
+  <!-- BEGIN: Vendor CSS-->
+  <link rel="stylesheet" type="text/css" href="./assets/css/vendor/vendors.min.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/vendor/apexcharts.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/vendor/toastr.min.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/vendor/select2.min.css">
+  <!-- END: Vendor CSS-->
+
+  <!-- BEGIN: Theme CSS-->
+  <link rel="stylesheet" type="text/css" href="./assets/css/theme/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/theme/bootstrap-extended.min.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/theme/colors.min.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/theme/components.min.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/theme/dark-layout.min.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/theme/bordered-layout.min.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/theme/semi-dark-layout.min.css">
+
+  <!-- BEGIN: Page CSS-->
+  <link rel="stylesheet" type="text/css" href="./assets/css/pages/horizontal-menu.min.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/pages/home/dashboard.min.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/pages/chart-apex.min.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/pages/ext-component-toastr.min.css">
+  <!-- END: Page CSS-->
+
+  <!-- BEGIN: Custom CSS-->
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/pages/home/custom.css">
+  <!-- END: Custom CSS-->
+</head>
+  <!-- END: Head-->
+
+<!-- BEGIN: Body-->
+<body class="horizontal-layout horizontal-menu  navbar-floating footer-fixed  " data-open="hover" data-menu="horizontal-menu" data-col="">
+
+  <!-- BEGIN: Header-->
+  <nav class="header-navbar navbar-expand-lg navbar navbar-fixed align-items-center navbar-shadow navbar-brand-center" data-nav="brand-center">
+    <div class="navbar-header d-xl-block d-none">
+      <ul class="nav navbar-nav">
+        <li class="nav-item"><a class="navbar-brand" href="index.html">
+          <!-- <span class="brand-logo">
+              <img src="./images/v2_alt_logo.png" alt="logo" height="24">
+              </span> -->
+            <h2 class="brand-text mb-0">Proyecto Final de Data Science</h2></a></li>
+      </ul>
+    </div>
+    <div class="navbar-container d-flex content" style="direction: rtl;">
+      <ul class="nav navbar-nav align-items-center ms-auto" style="margin-right: auto;margin-left: 0px !important;">
+        <li class="nav-item dropdown dropdown-language"><a class="nav-link dropdown-toggle" id="dropdown-flag" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flag-icon flag-icon-ec" style="margin-left: .4rem;margin-right: 0px !important;"></i><span class="selected-language">Español</span></a>	
+          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-flag"><a class="dropdown-item" href="#" data-language="es"><i class="flag-icon flag-icon-ec"></i> Español</a><a class="dropdown-item" href="#" data-language="en"><i class="flag-icon flag-icon-us"></i> English</a>
+          </div>	
+        </li>
+
+        <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-style"><i class="ficon" data-feather="moon"></i></a></li>	
+        <li class="nav-item nav-search"><a class="nav-link nav-link-search"><i class="ficon" data-feather="search"></i></a>	
+          <div class="search-input" style="direction: ltr;">	
+            <div class="search-input-icon"><i data-feather="search"></i></div>	
+            <input class="form-control input" type="text" placeholder="Buscar..." tabindex="-1" data-search="search">	
+            <div class="search-input-close"><i data-feather="x"></i></div>	
+            <ul class="search-list search-list-main"></ul>	
+          </div>	
+        </li>
+
+        <li class="nav-item dropdown dropdown-user"><a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="user-nav d-sm-flex d-none" style="margin-left: .8rem;margin-right: 0px !important;"><span class="user-name fw-bolder">Jahyr Moreno</span><span class="user-status">Administrador</span></div><span class="avatar"><img class="round" src="./images/avatars/anonymous.png" alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span></a>
+          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user" style="left: 0!important;right: auto!important;direction: ltr;">
+            <a class="dropdown-item" href="#"><i class="me-50" data-feather="user"></i> Perfil</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="auth-login-cover.html"><i class="me-50" data-feather="help-circle"></i> Cerrar sesión</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- END: Header-->
+
+
+  <!-- BEGIN: Main Menu-->
+  <div class="horizontal-menu-wrapper">
+    <div class="header-navbar navbar-expand-sm navbar navbar-horizontal floating-nav navbar-light navbar-shadow menu-border container-xxl" role="navigation" data-menu="menu-wrapper" data-menu-type="floating-nav">
+      <div class="navbar-header">
+        <ul class="nav navbar-nav flex-row">
+          <li class="nav-item me-auto"><a class="navbar-brand" href="index.html"><span class="brand-logo">
+              <h2 class="brand-text mb-0">Final DS</h2></a></li>
+            <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pe-0" data-bs-toggle="collapse"><i class="d-block d-xl-none text-primary toggle-icon font-medium-4" data-feather="x"></i></a></li>
+        </ul>
+      </div>
+      <div class="shadow-bottom"></div>
+      <!-- Horizontal menu content-->
+      <div class="navbar-container main-menu-content" data-menu="menu-container">
+        <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
+          <li class="active nav-item"><a class="nav-link d-flex align-items-center i18n" href="index.html"><i data-feather="home"></i><span data-i18n="Inicio">Inicio</span></a>
+          </li>
+          <li class="nav-item"><a class="nav-link d-flex align-items-center i18n" href="#"><i data-feather="bar-chart-2"></i><span data-i18n="Gráficos Apex">Gráficos Apex</span></a>
+          </li>
+          <li class="nav-item"><a class="nav-link d-flex align-items-center i18n" href="#"><i data-feather="pie-chart"></i><span data-i18n="Gráficos Chartjs">Gráficos Chartjs</span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- END: Main Menu-->
+
+  <!-- BEGIN: Content-->
+  <div class="app-content content ">
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper container-xxl p-0">
+
+      <div class="row match-height">
+        <!-- Pregunta A -->
+        <div class="col-6">
+          <div class="card">
+            <div class="card-header d-flex flex-sm-row flex-column justify-content-md-between align-items-start justify-content-start">
+              <div>
+                <h4 class="card-title i18n" data-i18n="Pregunta A">Pregunta A</h4>
+              </div>
+            </div>
+            <div class="card-body i18n">
+              <p class="card-text" data-i18n="Pregunta A1">¿Cuál son las interacciones más frecuentes de los estudiantes en una sesión de estudio?</p>
+              <div id="preguntaA"></div>
+            </div>
+          </div>
+        </div>
+        <!--Pregunta A ends -->
+
+        <!-- Pregunta B -->
+        <div class="col-6">
+          <div class="card">
+            <div class="card-header d-flex flex-sm-row flex-column justify-content-md-between align-items-start justify-content-start">
+              <div>
+                <h4 class="card-title i18n" data-i18n="Pregunta B"></n>Pregunta B</h4>
+              </div>
+              <div class="d-flex align-items-center">
+                <select class="hide-search select2-icons form-select i18n" id="select2-weeks">
+                  <option value="1" data-icon="calendar" selected data-i18n="Semana 1">Semana 1</option>
+                  <option value="2" data-icon="calendar" data-i18n="Semana 2">Semana 2</option>
+                  <option value="3" data-icon="calendar" data-i18n="Semana 3">Semana 3</option>
+                  <option value="4" data-icon="calendar" data-i18n="Semana 4">Semana 4</option>
+                  <option value="5" data-icon="calendar" data-i18n="Semana 5">Semana 5</option>
+                  <option value="6" data-icon="calendar" data-i18n="Semana 6">Semana 6</option>
+                </select>
+              </div>
+            </div>
+            <div class="card-body pb-50">
+              <p class="card-text" class="i18n" data-i18n="Pregunta B1">¿Cuáles son las frecuencias de interacciones por semana con los recursos del MOOC?</p>
+              <div id="preguntaB"></div>
+            </div>
+          </div>
+        </div>
+        <!-- Pregunta B ends -->
+      </div>
+
+      <!-- Pregunta D -->
+      <div class="row match-height">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header d-flex flex-sm-row flex-column justify-content-md-between align-items-start justify-content-start">
+              <div>
+                <h4 class="card-title i18n" data-i18n="Pregunta D">Pregunta D</h4>
+              </div>
+            </div>
+            <div class="card-body i18n">
+              <p class="card-text" data-i18n="Pregunta D1">¿Cuántos motifs se lograron definir?</p>
+            </div>
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Motif</th>
+                    <th><span class="badge rounded-pill badge-light-success me-1 i18n" data-i18n="Aprueba">Aprueba</span></th>
+                    <th><span class="badge rounded-pill badge-light-danger me-1 i18n" data-i18n="No Aprueba">No Aprueba</span></th>
+                    <th class="i18n" data-i18n="Total">Total</th>
+                    <th><span class="badge rounded-pill badge-light-success me-1 i18n" data-i18n="Aprueba %">Aprueba %</span></th>
+                    <th><span class="badge rounded-pill badge-light-danger me-1 i18n" data-i18n="No Aprueba %">No Aprueba %</span></th>
+                    <th class="i18n" data-i18n="Total %">Total %</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <span class="fw-bold i18n" data-i18n="Completar Material">Completar Material</span>
+                    </td>
+                    <td>1009</td>
+                    <td>1697</td>
+                    <td>2706</td>
+                    <td>4.939783</td>
+                    <td>5.899736</td>
+                    <td>5.501118</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="fw-bold i18n" data-i18n="Exámen Limpio">Exámen Limpio</span>
+                    </td>
+                    <td>487</td>
+                    <td>381</td>
+                    <td>868</td>
+                    <td>2.384216</td>
+                    <td>1.324572</td>
+                    <td>1.764586</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="fw-bold i18n" data-i18n="Explorar">Explorar</span>
+                    </td>
+                    <td>69</td>
+                    <td>493</td>
+                    <td>562</td>
+                    <td>0.337805</td>
+                    <td>1.713948</td>
+                    <td>1.142509</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="fw-bold i18n" data-i18n="Mejora Nota">Mejora Nota</span>
+                    </td>
+                    <td>3735</td>
+                    <td>4982</td>
+                    <td>8717</td>
+                    <td>18.285518</td>
+                    <td>17.320261</td>
+                    <td>17.721082</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="fw-bold i18n" data-i18n="Otro">Otro</span>
+                    </td>
+                    <td>341</td>
+                    <td>507</td>
+                    <td>848</td>
+                    <td>1.669441</td>
+                    <td>1.762620</td>
+                    <td>1.723928</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="fw-bold i18n" data-i18n="Revisar Material">Revisar Material</span>
+                    </td>
+                    <td>1084</td>
+                    <td>2159</td>
+                    <td>3243</td>
+                    <td>5.306962</td>
+                    <td>7.505910</td>
+                    <td>6.592803</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="fw-bold i18n" data-i18n="Solo exams">Solo exams</span>
+                    </td>
+                    <td>9756</td>
+                    <td>9614</td>
+                    <td>19370</td>
+                    <td>47.762655</td>
+                    <td>33.423724</td>
+                    <td>39.377922</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="fw-bold i18n" data-i18n="Solo foros">Solo foros</span>
+                    </td>
+                    <td>88</td>
+                    <td>95</td>
+                    <td>183</td>
+                    <td>0.430823</td>
+                    <td>0.330274</td>
+                    <td>0.372027</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="fw-bold i18n" data-i18n="Solo lecture">Solo lecture</span>
+                    </td>
+                    <td>3818</td>
+                    <td>8632</td>
+                    <td>12450</td>
+                    <td>18.691863</td>
+                    <td>30.009734</td>
+                    <td>25.310022</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="fw-bold i18n" data-i18n="Solo quizzes">Solo quizzes</span>
+                    </td>
+                    <td>39</td>
+                    <td>204</td>
+                    <td>243</td>
+                    <td>0.190933</td>
+                    <td>0.709220</td>
+                    <td>0.494003</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Pregunta D ends -->
+
+      <!-- Pregunta E -->
+      <div class="row match-height">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header d-flex flex-sm-row flex-column justify-content-md-between align-items-start justify-content-start">
+              <div>
+                <h4 class="card-title i18n" data-i18n="Pregunta E">Pregunta E</h4>
+              </div>
+            </div>
+            <div class="card-body i18n">
+              <p class="card-text" data-i18n="Pregunta E1">¿Cómo se pueden clasificar a los estudiantes en base a los “motifs” (patrones de comportamiento) realizados durante sus sesiones de estudio en el MOOC?</p>
+              <center>
+                <div class="col-6">
+                  <div id="preguntaE"></div>
+                  <!-- <canvas class="radar-chart-ex chartjs" id="canvas" width="400" height="400"></canvas> -->
+                </div>
+              </center>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Pregunta E ends -->
+
+      <!-- Pregunta F -->
+      <div class="row match-height">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header d-flex flex-sm-row flex-column justify-content-md-between align-items-start justify-content-start">
+              <div>
+                <h4 class="card-title i18n" data-i18n="Pregunta F">Pregunta F</h4>
+              </div>
+              <div class="d-flex align-items-center">
+                <select class="hide-search select2-icons form-select i18n" id="select2-weeks-1">
+                  <option value="1" data-icon="calendar" selected data-i18n="Semana 1">Semana 1</option>
+                  <option value="2" data-icon="calendar" data-i18n="Semana 2">Semana 2</option>
+                  <option value="3" data-icon="calendar" data-i18n="Semana 3">Semana 3</option>
+                  <option value="4" data-icon="calendar" data-i18n="Semana 4">Semana 4</option>
+                  <option value="5" data-icon="calendar" data-i18n="Semana 5">Semana 5</option>
+                  <option value="6" data-icon="calendar" data-i18n="Semana 6">Semana 6</option>
+                </select>
+              </div>
+            </div>
+            <div class="card-body i18n">
+              <p class="card-text" data-i18n="Pregunta F1">¿Cómo organizan el tiempo de sus sesiones los estudiantes identificados en esta clasificación (resultado del punto e) para cada semana del curso?</p>
+              <div id="tmp-smn-1">
+                <div class="row">
+                  <div class="col-6">
+                    <h4 class="card-title">Cluster 1</h4>
+                    <div id="preguntaF-c1-s1"></div>
+                  </div>
+                  <div class="col-6">
+                    <h4 class="card-title">Cluster 2</h4>
+                    <div id="preguntaF-c2-s1"></div>
+                  </div>
+                </div>
+              </div>
+              <div id="tmp-smn-2" style="display: none;">
+                <div class="row">
+                  <div class="col-6">
+                    <h4 class="card-title">Cluster 1</h4>
+                    <div id="preguntaF-c1-s2"></div>
+                  </div>
+                  <div class="col-6">
+                    <h4 class="card-title">Cluster 2</h4>
+                    <div id="preguntaF-c2-s2"></div>
+                  </div>
+                </div>
+              </div>
+              <div id="tmp-smn-3" style="display: none;">
+                <div class="row">
+                  <div class="col-6">
+                    <h4 class="card-title">Cluster 1</h4>
+                    <div id="preguntaF-c1-s3"></div>
+                  </div>
+                  <div class="col-6">
+                    <h4 class="card-title">Cluster 2</h4>
+                    <div id="preguntaF-c2-s3"></div>
+                  </div>
+                </div>
+              </div>
+              <div id="tmp-smn-4" style="display: none;">
+                <div class="row">
+                  <div class="col-6">
+                    <h4 class="card-title">Cluster 1</h4>
+                    <div id="preguntaF-c1-s4"></div>
+                  </div>
+                  <div class="col-6">
+                    <h4 class="card-title">Cluster 2</h4>
+                    <div id="preguntaF-c2-s4"></div>
+                  </div>
+                </div>
+              </div>
+              <div id="tmp-smn-5" style="display: none;">
+                <div class="row">
+                  <div class="col-6">
+                    <h4 class="card-title">Cluster 1</h4>
+                    <div id="preguntaF-c1-s5"></div>
+                  </div>
+                  <div class="col-6">
+                    <h4 class="card-title">Cluster 2</h4>
+                    <div id="preguntaF-c2-s5"></div>
+                  </div>
+                </div>
+              </div>
+              <div id="tmp-smn-6" style="display: none;">
+                <div class="row">
+                  <div class="col-6">
+                    <h4 class="card-title">Cluster 1</h4>
+                    <div id="preguntaF-c1-s6"></div>
+                  </div>
+                  <div class="col-6">
+                    <h4 class="card-title">Cluster 2</h4>
+                    <div id="preguntaF-c2-s6"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Pregunta F ends -->
+
+      <!-- Pregunta F -->
+      <div class="row match-height">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header d-flex flex-sm-row flex-column justify-content-md-between align-items-start justify-content-start">
+              <div>
+                <h4 class="card-title i18n" data-i18n="Pregunta G">Pregunta G</h4>
+              </div>
+              <div class="d-flex align-items-center">
+                <select class="hide-search form-select me-2" id="select-type">
+                  <option value="1" selected>Assessment</option>
+                  <option value="2">Assimilative</option>
+                  <option value="3">Experiential</option>
+                  <option value="4">Interactive/Adaptive</option>
+                </select>
+                <select class="hide-search form-select i18n" id="select-activity">
+                  <option value="1" selected data-i18n="Evaluación Formativa">Evaluación Formativa</option>
+                  <option value="2" data-i18n="Evaluación Sumativa">Evaluación Sumativa</option>
+                </select>
+              </div>
+            </div>
+            <div class="card-body i18n">
+              <p class="card-text" data-i18n="Pregunta GQ1">RQ1 ¿Cómo y en qué medida difiere el compromiso (engagement) con los diferentes elementos del diseño de aprendizaje entre los tipos de estudiantes encontrados en la pregunta e?</p>
+              <div id="g-asmt-f">
+                <div class="row">
+                  <div class="col-6">
+                    <h4 class="card-title">Aprueba o No Aprueba</h4>
+                    <div id="preguntaG-asmt-f-anoa"></div>
+                  </div>
+                  <div class="col-6">
+                    <h4 class="card-title">Cluster</h4>
+                    <div id="preguntaG-asmt-f-c"></div>
+                  </div>
+                </div>
+              </div>
+              <div id="g-asmt-s" style="display: none;">
+                <div class="row">
+                  <div class="col-6">
+                    <h4 class="card-title">Aprueba o No Aprueba</h4>
+                    <div id="preguntaG-asmt-s-anoa"></div>
+                  </div>
+                  <div class="col-6">
+                    <h4 class="card-title">Cluster</h4>
+                    <div id="preguntaG-asmt-s-c"></div>
+                  </div>
+                </div>
+              </div>
+              <div id="g-asmlt-vl" style="display: none;">
+                <div class="row">
+                  <div class="col-6">
+                    <h4 class="card-title">Aprueba o No Aprueba</h4>
+                    <div id="preguntaG-asmlt-vl-anoa"></div>
+                  </div>
+                  <div class="col-6">
+                    <h4 class="card-title">Cluster</h4>
+                    <div id="preguntaG-asmlt-vl-c"></div>
+                  </div>
+                </div>
+              </div>
+              <div id="g-exp-vl" style="display: none;">
+                <div class="row">
+                  <div class="col-6">
+                    <h4 class="card-title">Aprueba o No Aprueba</h4>
+                    <div id="preguntaG-exp-vl-anoa"></div>
+                  </div>
+                  <div class="col-6">
+                    <h4 class="card-title">Cluster</h4>
+                    <div id="preguntaG-exp-vl-c"></div>
+                  </div>
+                </div>
+              </div>
+              <div id="g-inad-f" style="display: none;">
+                <div class="row">
+                  <div class="col-6">
+                    <h4 class="card-title">Aprueba o No Aprueba</h4>
+                    <div id="preguntaG-inad-f-anoa"></div>
+                  </div>
+                  <div class="col-6">
+                    <h4 class="card-title">Cluster</h4>
+                    <div id="preguntaG-inad-f-c"></div>
+                  </div>
+                </div>
+              </div>
+              <div id="g-inad-s" style="display: none;">
+                <div class="row">
+                  <div class="col-6">
+                    <h4 class="card-title">Aprueba o No Aprueba</h4>
+                    <div id="preguntaG-inad-s-anoa"></div>
+                  </div>
+                  <div class="col-6">
+                    <h4 class="card-title">Cluster</h4>
+                    <div id="preguntaG-inad-s-c"></div>
+                  </div>
+                </div>
+              </div>
+              <div id="g-inad-vl" style="display: none;">
+                <div class="row">
+                  <div class="col-6">
+                    <h4 class="card-title">Aprueba o No Aprueba</h4>
+                    <div id="preguntaG-inad-vl-anoa"></div>
+                  </div>
+                  <div class="col-6">
+                    <h4 class="card-title">Cluster</h4>
+                    <div id="preguntaG-inad-vl-c"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Pregunta F ends -->
+    </div>
+  </div>
+  <!-- END: Content-->
+
+  <div class="sidenav-overlay"></div>
+  <div class="drag-target"></div>
+
+  <!-- BEGIN: Footer-->
+  <footer class="footer footer-static footer-light">
+    <p class="clearfix mb-0"><span class="float-md-start d-block d-md-inline-block mt-25">COPYRIGHT  &copy; 2022<!-- <a class="ms-25" href="#" target="_blank">JM</a>--><span class="d-none d-sm-inline-block">, Todos los derechos reservados.</span></span><span class="float-md-end d-none d-md-block">Hecho a mano y hecho con<i data-feather="heart"></i></span></p>
+  </footer>
+  <button class="btn btn-primary btn-icon scroll-top" type="button"><i data-feather="arrow-up"></i></button>
+  <!-- END: Footer-->
+
+
+  <!-- BEGIN: Vendor JS-->
+  <script src="./assets/js/vendor/vendors.min.js"></script>
+  <!-- BEGIN Vendor JS-->
+
+  <!-- BEGIN: Page Vendor JS-->
+  <script src="./assets/js/pages/jquery.sticky.js"></script>
+  <script src="./assets/js/pages/apexcharts.min.js"></script>
+  <script src="./assets/js/pages/chart.min.js"></script>
+  <script src="./assets/js/pages/toastr.min.js"></script>
+  <script src="./assets/js/pages/select2.full.min.js"></script>
+  <!-- END: Page Vendor JS-->
+
+  <!-- BEGIN: Theme JS-->
+  <script src="./assets/js/theme/app-menu.min.js"></script>
+  <script src="./assets/js/theme/app.min.js"></script>
+  <script src="./assets/js/theme/customizer.min.js"></script>
+  <!-- END: Theme JS-->
+
+  <!-- BEGIN: Page JS-->
+  <script src="./assets/js/pages/home/dashboard.min.js"></script>
+  <!-- END: Page JS-->
+  <!-- END: Body-->
+</body>
+</html>
